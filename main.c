@@ -63,27 +63,26 @@ void main()
     }
     for (int i=0;i<grid_size;i++)
         grid[i]=99; //placeholder value for non-marked squares
-        for (turn = 0; turn < 5; turn++)// since player can make a max of 5 moves
+    for (turn = 0; turn < 5; turn++)// since player can make a max of 5 moves
+    {
+        // loops until a valid move is made
+        do
         {
-            // loops until a valid move is made
-            do
-            {
-                printf("\nEnter a position (1-9): ");
-                scanf("%d", &input);
-                input -= 1;
-                move_valid = accept_ip_from_user(grid, input);
-            } while (!move_valid);
+            printf("\nEnter a position (1-9): ");
+            scanf("%d", &input);
+            input -= 1;
+            move_valid = accept_ip_from_user(grid, input);
+        } while (!move_valid);
 
-            printf("Your move:\n");
+        printf("Your move:\n");
+        print_array(grid);
+        if (turn < 4) // only 4 computer moves are possible
+        {
+            printf("Computer's move:\n");
+            generate_0_by_system(grid);
             print_array(grid);
-            if (turn < 4) // only 4 computer moves are possible
-            {
-                printf("Computer's move:\n");
-                generate_0_by_system(grid);
-                print_array(grid);
-            }
         }
-
+    }
 }
 
 
