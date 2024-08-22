@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 #define grid_size 9
 
 void generate_0_by_system(int grid[])
