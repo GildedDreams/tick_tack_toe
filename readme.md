@@ -1,6 +1,6 @@
-#This is the official documentation for creating this tick tack toe program in C.
+# Official documentation
 
-#Footnotes
+# Footnotes
 1. i decided to create a tick tak toe game using c language.
 It sure will be quite inefficent to do so in C language, but let us see how it turns out.
 
@@ -17,8 +17,8 @@ But first we should focus on how to completely fill the grid with x and 0.
 5. for the sake of simplicity, first i will use 0 and 1 instead of x or o in the game.
 
 
-#Changelogs
-##21/08/2024
+# Changelogs
+## 21/08/2024
 1. in the main function, i created a for loop that prints something like
    1 2 3
    4 5 6
@@ -29,7 +29,7 @@ But first we should focus on how to completely fill the grid with x and 0.
 3. i created a function called accept_ip which inputs the value of a given position
    in the array as 0 according to user input.
 
-##22/08/2024
+## 22/08/2024
 1. At this point i realised that i can do the same thing with one dimensional array, which will be far more simpler to manipulate.
    therefore, i made the necessary changes.
 2. I created a print function that prints the grid whenever called.
