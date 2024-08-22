@@ -32,3 +32,4 @@ where user can select the position where first 0 is to be put.
 22/08/2024
 1. At this point i realised that i can do the same thing with one dimensional array, which will be far more simpler to manipulate. 
    therefore, i made the necessary changes.
+2. I created a print function that prints the grid whenever called.
