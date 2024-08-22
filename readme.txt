@@ -33,4 +33,5 @@ where user can select the position where first 0 is to be put.
 1. At this point i realised that i can do the same thing with one dimensional array, which will be far more simpler to manipulate. 
    therefore, i made the necessary changes.
 2. I created a print function that prints the grid whenever called.
-3. I also thought of initialising the entire array with 99 as sentinel value.
+3. I also thought of initialising the entire array with 99 as placeholder value.
+4. 
