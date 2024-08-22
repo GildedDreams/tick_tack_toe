@@ -28,3 +28,7 @@ where user can select the position where first 0 is to be put.
 2. i accepted the index no. from 1 to 9 from the user as "input".
 3. i created a function called accept_ip which inputs the value of a given position
    in the array as 0 according to user input.
+
+22/08/2024
+1. At this point i realised that i can do the same thing with one dimensional array, which will be far more simpler to manipulate. 
+   therefore, i made the necessary changes.
