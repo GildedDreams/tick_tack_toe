@@ -3,6 +3,7 @@
 #define grid_size 10 
 
 void generate_0_by_system(int array[]){
+    srand(time(NULL));
     int pos= rand() % 9;
     if (array[pos]!=99){
         pos=rand() % 9;
