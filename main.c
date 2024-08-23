@@ -5,15 +5,11 @@
 
 void generate_0_by_system(int grid[])
 {
-    int pos= rand() % grid_size;
-    if (grid[pos]!=99)
-    {
-        pos=rand() % grid_size;
-    }
-    else
-    {
-        grid[pos]=0;
-    }
+    int pos;
+    do{
+        pos = rand() % grid_size;
+    } while (grid[pos] != 99);
+    grid[pos] = 0;
 }
 
 void print_array(int grid[])
@@ -49,6 +45,82 @@ int accept_ip_from_user(int grid[],int input)
 
 }
 
+int check_win(int grid[])
+{
+    //returns 1 if 1 is winner, 0 if 0 is the winner, and 9 if none of them are.
+    /*
+     possible win combinations:
+     {0, 1, 2},  // Row 1
+     {3, 4, 5},  // Row 2
+     {6, 7, 8},  // Row 3
+     {0, 3, 6},  // Column 1
+     {1, 4, 7},  // Column 2
+     {2, 5, 8},  // Column 3
+     {0, 4, 8},  // Diagonal 1
+     {2, 4, 6}   // Diagonal 2
+    */
+    //yes this giant wall of code is probably unnecessary. yes i wrote it anyways. suggestions are very much welcome.
+    if (grid[0] == grid[1] && grid[1] == grid[2] && grid[0] != 99)
+    {
+        if (grid[0] == 1)
+            return 1;
+        else if (grid[0] == 0)
+            return 0;
+    }
+    if (grid[3] == grid[4] && grid[4] == grid[5] && grid[3] != 99)
+    {
+        if (grid[3] == 1)
+            return 1;
+        else if (grid[3] == 0)
+            return 0;
+    }
+    if (grid[6] == grid[7] && grid[7] == grid[8] && grid[6] != 99)
+    {
+        if (grid[6] == 1)
+            return 1;
+        else if (grid[6] == 0)
+            return 0;
+    }
+    if (grid[0] == grid[3] && grid[3] == grid[6] && grid[0] != 99)
+    {
+        if (grid[0] == 1)
+            return 1;
+        else if (grid[0] == 0)
+            return 0;
+    }
+    if (grid[1] == grid[4] && grid[4] == grid[7] && grid[1] != 99)
+    {
+        if (grid[1] == 1)
+            return 1;
+        else if (grid[1] == 0)
+            return 0;
+    }
+    if (grid[2] == grid[5] && grid[5] == grid[8] && grid[2] != 99)
+    {
+        if (grid[2] == 1)
+            return 1;
+        else if (grid[2] == 0)
+            return 0;
+    }
+    if (grid[0] == grid[4] && grid[4] == grid[8] && grid[0] != 99)
+    {
+        if (grid[0] == 1)
+            return 1;
+        else if (grid[0] == 0)
+            return 0;
+    }
+    if (grid[2] == grid[4] && grid[4] == grid[6] && grid[2] != 99)
+    {
+        if (grid[2] == 1)
+            return 1;
+        else if (grid[2] == 0)
+            return 0;
+    }
+    return -1; //if no winner
+
+}
+
+//main function
 void main()
 {
     int grid[grid_size], input, move_valid, turn;
@@ -76,12 +148,28 @@ void main()
 
         printf("Your move:\n");
         print_array(grid);
+        int result = check_win(grid);
+        if (result == 1)
+        {
+            printf("Congratulations, you win!\n");
+            break;
+        }
+
         if (turn < 5) // only 4 computer moves are possible
         {
             printf("Computer's move:\n");
             generate_0_by_system(grid);
             print_array(grid);
+            result = check_win(grid);
+            if (result == 0)
+            {
+                printf("Computer wins!\n");
+                break;
+            }
         }
+
+        if(turn == 4)
+            printf("It's a draw!\n");
     }
 }
 
