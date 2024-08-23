@@ -52,3 +52,8 @@ I did a few changes to the code, resulting in some main features to be working p
 
 Now, the user can enter where they want to enter the value, and the computer will randomly do the same. The user cannot select an already placed square, only an empty square can be selected
 There are a couple of things I want to add, though. The functionality to check if there are 3 0s or 1s in a row can be added, so the game can end, declaring a winner.
+
+## 23/08/2024
+[arnav]
+1. i added a function to check whether the player or the computer has won the game or not, and end it if so. The code for the function isnt the best, but it gets the job done. it could definitely be improved, but i'm not gonna prioritize that at the moment.
+2. my next move would be to add some sort of "intelligent" computer to the code, which can somewhat play the game, knowing how to win.
