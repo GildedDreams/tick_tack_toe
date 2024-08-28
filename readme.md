@@ -70,3 +70,20 @@ There are a couple of things I want to add, though. The functionality to check i
 [arnav]
 1. didn't really add anything new, but i did clean up the code by putting all functions inside their own header files, and calling them in the main.c file.
 >>>>>>> c87fb39 (created header files for all functions)
+
+## 28/08/2024
+
+[Aditya]
+Our task of priority is to make the computer generate 0s at positions such that it actually counters the user's move instead of generating 0s randomly. for the following purpose, i have thought of implementing an algorithm, which is based on general rule of winning a tick tack toe game.
+The rules are as follows-
+1. Opponent Starts in a Corner (4 corners of the grid):
+If X starts in a corner, place your O in the center. This forces X to play defensively and limits their winning options.
+After this, respond to X's next move by blocking their potential lines and aim to create your own two-in-a-row.
+
+2. Opponent Starts in the Center:
+If X starts in the center, place your O in any corner. This setup prevents X from easily controlling the board and opens opportunities for you to counterattack.
+
+3.Opponent Starts on an Edge (4 positions except the corners and centre):
+If X starts on an edge, place your O in the center. From there, block and strategize to create your winning opportunities.
+
+Based on the above algorithm, the function generate_0_by_system is to be updated.
