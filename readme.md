@@ -83,7 +83,7 @@ After this, respond to X's next move by blocking their potential lines and aim t
 2. Opponent Starts in the Center:
 If X starts in the center, place your O in any corner. This setup prevents X from easily controlling the board and opens opportunities for you to counterattack.
 
-3.Opponent Starts on an Edge (4 positions except the corners and centre):
+3. Opponent Starts on an Edge (4 positions except the corners and centre):
 If X starts on an edge, place your O in the center. From there, block and strategize to create your winning opportunities.
 
 Based on the above algorithm, the function generate_0_by_system is to be updated.
